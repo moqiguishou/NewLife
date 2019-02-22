@@ -61,11 +61,29 @@ namespace NewLife {
 
                 throw;
             }
+            wb.Close();
            
         }
 
         private void txt_test_TextChanged(object sender, EventArgs e) {
             txt_2.Text = "hello";
+        }
+
+        private void btn_test2_Click(object sender, EventArgs e) {
+            string sYear = "";
+            string sMonth = "";
+            string sDay = "";
+            sYear = txt_year.Text;
+            sMonth = txt_month.Text;
+            sDay = txt_day.Text;
+            if (sMonth.Length == 1) {
+                sMonth = "0" + sMonth;
+            }
+            if (sDay.Length == 1) {
+                sDay = "0" + sDay;
+            }
+
+            txt_test.Text = sYear + sMonth + sDay;
         }
     }
 }
